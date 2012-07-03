@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'UpdateiOSSoftwareImages' target in the 'UpdateiOSSoftwareImages' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif

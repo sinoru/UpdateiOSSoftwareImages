@@ -1,0 +1,239 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1988549B15A3101900501C6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1988549A15A3101900501C6C /* Foundation.framework */; };
+		1988549E15A3101900501C6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1988549D15A3101900501C6C /* main.m */; };
+		198854A215A3101900501C6C /* UpdateiOSSoftwareImages.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 198854A115A3101900501C6C /* UpdateiOSSoftwareImages.1 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1988549415A3101900501C6C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				198854A215A3101900501C6C /* UpdateiOSSoftwareImages.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1988549615A3101900501C6C /* UpdateiOSSoftwareImages */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = UpdateiOSSoftwareImages; sourceTree = BUILT_PRODUCTS_DIR; };
+		1988549A15A3101900501C6C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1988549D15A3101900501C6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		198854A015A3101900501C6C /* UpdateiOSSoftwareImages-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UpdateiOSSoftwareImages-Prefix.pch"; sourceTree = "<group>"; };
+		198854A115A3101900501C6C /* UpdateiOSSoftwareImages.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = UpdateiOSSoftwareImages.1; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1988549315A3101900501C6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1988549B15A3101900501C6C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1988548B15A3101900501C6C = {
+			isa = PBXGroup;
+			children = (
+				1988549C15A3101900501C6C /* UpdateiOSSoftwareImages */,
+				1988549915A3101900501C6C /* Frameworks */,
+				1988549715A3101900501C6C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1988549715A3101900501C6C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1988549615A3101900501C6C /* UpdateiOSSoftwareImages */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1988549915A3101900501C6C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1988549A15A3101900501C6C /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1988549C15A3101900501C6C /* UpdateiOSSoftwareImages */ = {
+			isa = PBXGroup;
+			children = (
+				1988549D15A3101900501C6C /* main.m */,
+				198854A115A3101900501C6C /* UpdateiOSSoftwareImages.1 */,
+				1988549F15A3101900501C6C /* Supporting Files */,
+			);
+			path = UpdateiOSSoftwareImages;
+			sourceTree = "<group>";
+		};
+		1988549F15A3101900501C6C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				198854A015A3101900501C6C /* UpdateiOSSoftwareImages-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1988549515A3101900501C6C /* UpdateiOSSoftwareImages */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 198854A515A3101900501C6C /* Build configuration list for PBXNativeTarget "UpdateiOSSoftwareImages" */;
+			buildPhases = (
+				1988549215A3101900501C6C /* Sources */,
+				1988549315A3101900501C6C /* Frameworks */,
+				1988549415A3101900501C6C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UpdateiOSSoftwareImages;
+			productName = UpdateiOSSoftwareImages;
+			productReference = 1988549615A3101900501C6C /* UpdateiOSSoftwareImages */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1988548D15A3101900501C6C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = Sinoru;
+			};
+			buildConfigurationList = 1988549015A3101900501C6C /* Build configuration list for PBXProject "UpdateiOSSoftwareImages" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1988548B15A3101900501C6C;
+			productRefGroup = 1988549715A3101900501C6C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1988549515A3101900501C6C /* UpdateiOSSoftwareImages */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1988549215A3101900501C6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1988549E15A3101900501C6C /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		198854A315A3101900501C6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		198854A415A3101900501C6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		198854A615A3101900501C6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UpdateiOSSoftwareImages/UpdateiOSSoftwareImages-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		198854A715A3101900501C6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UpdateiOSSoftwareImages/UpdateiOSSoftwareImages-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1988549015A3101900501C6C /* Build configuration list for PBXProject "UpdateiOSSoftwareImages" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				198854A315A3101900501C6C /* Debug */,
+				198854A415A3101900501C6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		198854A515A3101900501C6C /* Build configuration list for PBXNativeTarget "UpdateiOSSoftwareImages" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				198854A615A3101900501C6C /* Debug */,
+				198854A715A3101900501C6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1988548D15A3101900501C6C /* Project object */;
+}
