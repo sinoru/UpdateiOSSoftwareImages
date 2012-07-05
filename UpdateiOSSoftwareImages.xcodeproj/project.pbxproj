@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		190F3C1A15A34FC900A8F999 /* FileHashManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 190F3C1915A34FC900A8F999 /* FileHashManager.m */; };
 		1988549B15A3101900501C6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1988549A15A3101900501C6C /* Foundation.framework */; };
 		1988549E15A3101900501C6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1988549D15A3101900501C6C /* main.m */; };
 		198854A215A3101900501C6C /* UpdateiOSSoftwareImages.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 198854A115A3101900501C6C /* UpdateiOSSoftwareImages.1 */; };
@@ -28,6 +29,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		190F3C1815A34FC900A8F999 /* FileHashManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHashManager.h; sourceTree = "<group>"; };
+		190F3C1915A34FC900A8F999 /* FileHashManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHashManager.m; sourceTree = "<group>"; };
 		1988549615A3101900501C6C /* UpdateiOSSoftwareImages */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = UpdateiOSSoftwareImages; sourceTree = BUILT_PRODUCTS_DIR; };
 		1988549A15A3101900501C6C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1988549D15A3101900501C6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -84,6 +87,8 @@
 				198854A915A317B700501C6C /* UpdateiOSSoftwareImages.m */,
 				198854AB15A317CF00501C6C /* DownloadiOSSoftwareImageOperation.h */,
 				198854AC15A317CF00501C6C /* DownloadiOSSoftwareImageOperation.m */,
+				190F3C1815A34FC900A8F999 /* FileHashManager.h */,
+				190F3C1915A34FC900A8F999 /* FileHashManager.m */,
 				198854A115A3101900501C6C /* UpdateiOSSoftwareImages.1 */,
 				1988549F15A3101900501C6C /* Supporting Files */,
 			);
@@ -152,6 +157,7 @@
 				1988549E15A3101900501C6C /* main.m in Sources */,
 				198854AA15A317B700501C6C /* UpdateiOSSoftwareImages.m in Sources */,
 				198854AD15A317CF00501C6C /* DownloadiOSSoftwareImageOperation.m in Sources */,
+				190F3C1A15A34FC900A8F999 /* FileHashManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
