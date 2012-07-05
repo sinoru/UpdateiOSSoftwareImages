@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+#import "FileHashManager.h"
+
 @interface DownloadiOSSoftwareImageOperation : NSOperation <NSURLDownloadDelegate>
 
-- (id)initWithSoftwareImageURL:(NSURL *)softwareImageURL destinationDirectoryPath:(NSString *)destinationDirectoryPath modelName:(NSString *)modelName productVersion:(NSString *)productVersion buildVersion:(NSString *)buildVersion;
+- (id)initWithSoftwareImageURL:(NSURL *)softwareImageURL softwareImageSHA1Hash:(NSString *)softwareImageSHA1Hash destinationDirectoryPath:(NSString *)destinationDirectoryPath modelName:(NSString *)modelName productVersion:(NSString *)productVersion buildVersion:(NSString *)buildVersion;
 
 @property (strong, nonatomic, readonly) NSURL *softwareImageURL;
 @property (strong, nonatomic, readonly) NSString *destinationDirectoryPath;

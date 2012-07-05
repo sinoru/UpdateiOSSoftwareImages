@@ -18,6 +18,7 @@
 }
 
 @property (strong, nonatomic, readwrite) NSURL *softwareImageURL;
+@property (strong, nonatomic) NSString *softwareImageSHA1Hash;
 @property (strong, nonatomic, readwrite) NSString *destinationDirectoryPath;
 @property (strong, nonatomic, readwrite) NSString *modelName;
 @property (strong, nonatomic, readwrite) NSString *productVersion;
@@ -25,17 +26,19 @@
 @property (strong, nonatomic, readwrite) NSURLDownload *download;
 @property (strong, nonatomic, readwrite) NSHTTPURLResponse *receivedHTTPURLResponse;
 @property (strong, nonatomic, readwrite) NSError *error;
+@property (strong, nonatomic) NSString *filePath;
 @property (strong, nonatomic) NSMutableURLRequest *request;
 
 @end
 
 @implementation DownloadiOSSoftwareImageOperation
 
-- (id)initWithSoftwareImageURL:(NSURL *)softwareImageURL destinationDirectoryPath:(NSString *)destinationDirectoryPath modelName:(NSString *)modelName productVersion:(NSString *)productVersion buildVersion:(NSString *)buildVersion
+- (id)initWithSoftwareImageURL:(NSURL *)softwareImageURL softwareImageSHA1Hash:(NSString *)softwareImageSHA1Hash destinationDirectoryPath:(NSString *)destinationDirectoryPath modelName:(NSString *)modelName productVersion:(NSString *)productVersion buildVersion:(NSString *)buildVersion
 {
     self = [super init];
     if (self) {
         // Initialization code
+        self.softwareImageSHA1Hash = softwareImageSHA1Hash;
         self.destinationDirectoryPath = destinationDirectoryPath;
         self.modelName = modelName;
         self.productVersion = productVersion;
@@ -88,7 +91,12 @@
 
 - (void)download:(NSURLDownload *)download decideDestinationWithSuggestedFilename:(NSString *)filename
 {
-    [download setDestination:[self.destinationDirectoryPath stringByAppendingPathComponent:filename] allowOverwrite:NO];
+    [download setDestination:[self.destinationDirectoryPath stringByAppendingPathComponent:filename] allowOverwrite:YES];
+}
+
+- (void)download:(NSURLDownload *)download didCreateDestination:(NSString *)path
+{
+    self.filePath = path;
 }
 
 - (void)download:(NSURLDownload *)download didReceiveResponse:(NSURLResponse *)response
@@ -148,6 +156,15 @@
     
     printf("100%% Downloaded (%s)     ", speedString.UTF8String);
     printf("\n\r");
+    
+    printf("Checking Downloaded Firmware File's Integrity...\n");
+    
+    if ([[FileHashManager fileSHA1HashCreateWithPath:self.filePath chunkSizeForReadingData:FileHashDefaultChunkSizeForReadingData] isEqualToString:self.softwareImageSHA1Hash]) {
+        printf("Good.\n");
+    }
+    else {
+        printf("Failed.\n");
+    }
     
     self.download = nil;
     
