@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "FileHashManager.h"
+
 @interface UpdateiOSSoftwareImages : NSObject
 
 - (void)startUpdateiOSSoftwareImages:(NSString *)directoryPath;

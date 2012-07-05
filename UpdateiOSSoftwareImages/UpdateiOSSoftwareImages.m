@@ -31,8 +31,6 @@ NSString const* AppleiOSUpdateURLString = @"http://phobos.apple.com/version";
     
     NSDictionary *iOSSoftwareVersions = iOSSoftwareVersionsByVersion[iOSSoftwareVersionsByLastVersionKey][@"MobileDeviceSoftwareVersions"];
     
-    NSLog(@"%@", [[iOSSoftwareVersions allKeys] sortedArrayUsingSelector:@selector(compare:)]);
-    
     for (id iOSModelName in [[iOSSoftwareVersions allKeys] sortedArrayUsingSelector:@selector(compare:)]) {
         NSDictionary *iOSSoftwareBuildVersionListByModel = iOSSoftwareVersions[iOSModelName];
         
@@ -52,18 +50,31 @@ NSString const* AppleiOSUpdateURLString = @"http://phobos.apple.com/version";
         
         NSString *lastSoftwareProductVersion = lastSotftwareRestore[@"ProductVersion"];
         NSURL *lastSoftwareFirmwareURL = [NSURL URLWithString:lastSotftwareRestore[@"FirmwareURL"]];
+        NSString *lastSoftwareFirmwareSHA1Hash = lastSotftwareRestore[@"FirmwareSHA1"];
         
         if (lastSoftwareFirmwareURL) {
             NSFileManager *fileManager = [[NSFileManager alloc] init];
             
-            if (![fileManager fileExistsAtPath:[directoryPath stringByAppendingPathComponent:[lastSoftwareFirmwareURL lastPathComponent]]]) {
-                DownloadiOSSoftwareImageOperation *downloadiOSSoftwareImageOperation = [[DownloadiOSSoftwareImageOperation alloc] initWithSoftwareImageURL:lastSoftwareFirmwareURL destinationDirectoryPath:directoryPath modelName:iOSModelName productVersion:lastSoftwareProductVersion buildVersion:lastSoftwareBuildVersion];
-                
-                [self.softwareDownloadingQueue addOperation:downloadiOSSoftwareImageOperation];
+            if ([fileManager fileExistsAtPath:[directoryPath stringByAppendingPathComponent:[lastSoftwareFirmwareURL lastPathComponent]]]) {
+                if (![[FileHashManager fileSHA1HashCreateWithPath:[directoryPath stringByAppendingPathComponent:[lastSoftwareFirmwareURL lastPathComponent]] chunkSizeForReadingData:FileHashDefaultChunkSizeForReadingData] isEqualToString:lastSoftwareFirmwareSHA1Hash]) {
+                    NSLog(@"You have already iOS %@ (%@) Software Image for %@. But, It looks like broken. Do you want to re-download? (Y/N)", lastSoftwareProductVersion, lastSoftwareBuildVersion, iOSModelName);
+                    
+                    char string[4];
+                    scanf("%3s", &string);
+                    
+                    if (![[NSString stringWithUTF8String:string] isEqualToString:@"Y"] && ![[NSString stringWithUTF8String:string] isEqualToString:@"Yes"] && ![[NSString stringWithUTF8String:string] isEqualToString:@"y"] && ![[NSString stringWithUTF8String:string] isEqualToString:@"yes"]) {
+                        continue;
+                    }
+                }
+                else {
+                    NSLog(@"Already Downloaded! Skip to Download iOS %@ (%@) Software Image for %@!", lastSoftwareProductVersion, lastSoftwareBuildVersion, iOSModelName);
+                    continue;
+                }
             }
-            else {
-                NSLog(@"Skip to download iOS %@ (%@) software image for %@!", lastSoftwareProductVersion, lastSoftwareBuildVersion, iOSModelName);
-            }
+            
+            DownloadiOSSoftwareImageOperation *downloadiOSSoftwareImageOperation = [[DownloadiOSSoftwareImageOperation alloc] initWithSoftwareImageURL:lastSoftwareFirmwareURL softwareImageSHA1Hash:lastSoftwareFirmwareSHA1Hash destinationDirectoryPath:directoryPath modelName:iOSModelName productVersion:lastSoftwareProductVersion buildVersion:lastSoftwareBuildVersion];
+            
+            [self.softwareDownloadingQueue addOperation:downloadiOSSoftwareImageOperation];
         }
     }
     
